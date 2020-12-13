@@ -1,9 +1,12 @@
 import React from 'react'
+import './banner.css'
 
-export const Banner = () => {
+const Banner = () => {
   return (
-    <div>
-
+    <div className="banner">
+      <img src="../../images/bg-desktop-dark.jpg" alt="" />
     </div>
   )
 }
+
+export default Banner

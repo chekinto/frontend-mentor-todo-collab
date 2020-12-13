@@ -1,0 +1,11 @@
+.custom-input {
+  border-radius: 5px;
+  border: none;
+  display: block;
+  height: 64px;
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 18px;
+  letter-spacing: -0.25px;
+  font-family: inherit;
+}
