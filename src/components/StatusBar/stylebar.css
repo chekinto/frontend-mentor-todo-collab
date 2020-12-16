@@ -1,0 +1,31 @@
+.options__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.options__remaining p {
+  color: var(--grey2);
+}
+
+.options__status .active {
+  margin: 0 20px;
+}
+
+.options__status .all,
+.options__status .active,
+.options__status .completed, 
+.options__completed span {
+  color: var(--grey2);
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+.options__status .all:hover,
+.options__status .active:hover,
+.options__status .completed:hover,
+.options__completed span:hover {
+  color:var(--grey3);
+  cursor: pointer;
+}

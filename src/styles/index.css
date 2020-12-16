@@ -8,11 +8,15 @@
 
 html {
   --white: #FFF;
+  --blue: #3A7CFD;
+  --grey1: #E3E4F1;
+  --grey2: #9495A5;
+  --grey3: #494C6B;
 }
 
 body {
   background-image: url('../images/bg-desktop-light.jpg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   object-fit: contain;
   font-family: 'Josefin Sans', sans-serif;

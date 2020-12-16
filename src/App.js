@@ -1,8 +1,22 @@
-import React from 'react'
-import Overview from './components/Overview'
-import CustomInput from './components/CustomInput'
+import React, { useState } from 'react'
+import { CustomInput, Overview, StatusBar, Todo } from './components'
+import './app.css'
 
 const App = () => {
+  const [todos, setTodos] = useState([])
+  const [todo, setTodo] = useState({ id: '', todo: '', completed: false })
+
+  function createTodo(e) {
+    e.preventDefault();
+    setTodos([...todos, todo]);
+    e.currentTarget.reset();
+  }
+
+  function deleteTodo(id) {
+    const deletedTodo = todos.filter(todo => todo.id !== id)
+    setTodos(deletedTodo)
+  }
+
   return (
     <>
       <div className="container">
@@ -10,8 +24,24 @@ const App = () => {
         <CustomInput
           type="text"
           placeholder="Create a todo"
-
+          createTodo={createTodo}
+          setTodo={setTodo}
+          setTodos={setTodos}
         />
+        {todos.length < 1 && <p style={{ color: 'var(--white)' }}>Sorry no todos added</p>}
+
+        <div className="todo__wrapper">
+          {todos.map(todo => (
+            <Todo
+              key={todo.id}
+              {...todo}
+              todos={todos}
+              setTodos={setTodos}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+          {todos.length > 0 && <StatusBar todos={todos} />}
+        </div>
       </div>
     </>
   )

@@ -1,0 +1,69 @@
+.todo {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--grey1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: ;
+}
+
+.todo:last-of-type {
+  border-bottom: none;
+}
+
+.todo:hover .todo__icon {
+  opacity: 1;
+  opacity: 0.2;
+  transition: 0.2s ease-in;
+}
+
+.todo__content {
+  display: flex;
+  align-items: center;
+}
+
+.todo__content span {
+  color: var(--grey3);
+  margin-left: 24px;
+}
+
+.todo__label {
+  display: grid;
+  place-items: center;
+  border: 1px solid #C058F3;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+}
+
+.todo__label.completed {
+  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  border: none;
+}
+
+.todo__content span.completed {
+  text-decoration: line-through;
+  opacity: 0.2;
+
+}
+
+.todo__tick {
+  color: var(--white);
+  font-size: 10px;
+}
+
+.checkbox__icon {
+  display: none;
+}
+
+.todo__icon {
+  color: var(--grey3);
+  opacity: 0;
+}
+
+
+
+
+

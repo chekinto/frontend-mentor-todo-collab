@@ -2,7 +2,7 @@ import React from 'react'
 import './overview.css'
 import sunIcon from '../../images/icon-moon.svg'
 
-const Overview = ({ title }) => {
+export const Overview = ({ title }) => {
   return (
     <div className="overview">
       <h1 className="overview__header">{title}</h1>
@@ -13,4 +13,3 @@ const Overview = ({ title }) => {
   )
 }
 
-export default Overview
