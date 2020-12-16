@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { CustomInput, Overview, StatusBar, Todo } from './components'
 import './app.css'
 
 const App = () => {
   const [todos, setTodos] = useState([])
   const [todo, setTodo] = useState({ id: '', todo: '', completed: false })
+  const inputRef = useRef(null)
 
   function createTodo(e) {
     e.preventDefault();
@@ -17,6 +18,12 @@ const App = () => {
     setTodos(deletedTodo)
   }
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [])
+
   return (
     <>
       <div className="container">
@@ -26,7 +33,7 @@ const App = () => {
           placeholder="Create a todo"
           createTodo={createTodo}
           setTodo={setTodo}
-          setTodos={setTodos}
+          inputRef={inputRef}
         />
         {todos.length < 1 && <p style={{ color: 'var(--white)' }}>Sorry no todos added</p>}
 

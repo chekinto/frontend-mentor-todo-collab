@@ -5,7 +5,7 @@ export const StatusBar = ({ todos }) => {
   return (
     <div className="options__container">
       <div className="options__remaining">
-        <p>{todos.length} items left</p>
+        <p>{todos.length} {todos.length === 1 ? 'item' : 'items'}</p>
       </div>
 
       <div className="options__status">

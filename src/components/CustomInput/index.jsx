@@ -1,7 +1,7 @@
 import React from 'react'
 import './custom-input.css'
 
-export const CustomInput = ({ createTodo, setTodo, setTodos, setErrorMessage, setError, ...otherProps }) => {
+export const CustomInput = ({ createTodo, setTodo, setErrorMessage, setError, inputRef, ...otherProps }) => {
 
   function handleChange(e) {
     setTodo({
@@ -13,7 +13,7 @@ export const CustomInput = ({ createTodo, setTodo, setTodos, setErrorMessage, se
 
   return (
     <form onSubmit={createTodo}>
-      <input className="custom-input" {...otherProps} onChange={handleChange} />
+      <input className="custom-input" {...otherProps} onChange={handleChange} ref={inputRef} />
     </form>
   )
 }
