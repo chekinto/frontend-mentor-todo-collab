@@ -20,7 +20,3 @@ export const Todo = ({ id, todo, completed, deleteTodo, toggleCompleted }) => {
     </div >
   )
 }
-
-// click on checkbox
-// get the id of the clicked checkbox
-// change that selected complted to true

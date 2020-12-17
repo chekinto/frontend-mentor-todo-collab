@@ -6,7 +6,6 @@ const App = () => {
   const [todos, setTodos] = useState([])
   const [todo, setTodo] = useState({ id: '', todo: '', completed: false })
   const inputRef = useRef(null)
-  console.log('todos :>> ', todos);
 
   function createTodo(e) {
     e.preventDefault();
