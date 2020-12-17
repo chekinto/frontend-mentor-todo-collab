@@ -6,7 +6,7 @@ export const Todo = ({ id, todo, completed, deleteTodo, toggleCompleted }) => {
     <div className="todo">
       <div className="todo__content">
         <label className={`todo__label ${completed ? 'completed' : null}`}>
-          <i className="todo__tick fas fa-check"></i>
+          <i className="todo__tick fas fa-check" />
           <input
             type="checkbox"
             className="checkbox__icon"
