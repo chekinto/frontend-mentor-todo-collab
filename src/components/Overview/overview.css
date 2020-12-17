@@ -11,6 +11,7 @@
   font-size: 40px;
   letter-spacing: 15px;
   text-transform: uppercase;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .overview__image {
@@ -18,7 +19,25 @@
   height: 25px;
 }
 
-.overview__image img {
+.overview__icon {
   width: 100%;
   cursor: pointer;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+
+  85% {
+    opacity: 0.5;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

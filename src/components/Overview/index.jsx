@@ -7,7 +7,7 @@ export const Overview = ({ title }) => {
     <div className="overview">
       <h1 className="overview__header">{title}</h1>
       <div className="overview__image">
-        <img src={sunIcon} alt="sun icon" />
+        <img className="overview__icon" src={sunIcon} alt="sun icon" />
       </div>
     </div>
   )

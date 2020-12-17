@@ -6,6 +6,7 @@ const App = () => {
   const [todos, setTodos] = useState([])
   const [todo, setTodo] = useState({ id: '', todo: '', completed: false })
   const inputRef = useRef(null)
+  console.log('todos :>> ', todos);
 
   function createTodo(e) {
     e.preventDefault();
@@ -16,6 +17,11 @@ const App = () => {
   function deleteTodo(id) {
     const deletedTodo = todos.filter(todo => todo.id !== id)
     setTodos(deletedTodo)
+  }
+
+  function toggleCompleted(id) {
+    const completedTodos = todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo)
+    setTodos(completedTodos)
   }
 
   useEffect(() => {
@@ -43,8 +49,8 @@ const App = () => {
               key={todo.id}
               {...todo}
               todos={todos}
-              setTodos={setTodos}
               deleteTodo={deleteTodo}
+              toggleCompleted={toggleCompleted}
             />
           ))}
           {todos.length > 0 && <StatusBar todos={todos} />}

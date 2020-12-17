@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './todo.css'
 
-export const Todo = ({ id, todo, completed, deleteTodo }) => {
-  const [isChecked, setisChecked] = useState(completed)
-  console.log('isChecked :>> ', isChecked, todo, completed);
+export const Todo = ({ id, todo, completed, deleteTodo, toggleCompleted }) => {
   return (
     <div className="todo">
       <div className="todo__content">
-        <label className={`todo__label ${isChecked ? 'completed' : null}`}>
+        <label className={`todo__label ${completed ? 'completed' : null}`}>
           <i className="todo__tick fas fa-check"></i>
           <input
             type="checkbox"
             className="checkbox__icon"
-            checked={isChecked}
-            onChange={() => setisChecked(!isChecked)}
+            checked={completed}
+            onChange={() => toggleCompleted(id)}
           />
         </label>
-        <span className={`${isChecked ? 'completed' : null}`}>{todo}</span>
+        <span className={`${completed ? 'completed' : null}`}>{todo}</span>
       </div>
       <i className="todo__icon fas fa-times" onClick={() => deleteTodo(id)} />
-    </div>
+    </div >
   )
 }
 
